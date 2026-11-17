@@ -1,0 +1,61 @@
+from pathlib import Path
+
+base = Path("/mnt/data/github-pages-setup")
+workflow_dir = base / ".github" / "workflows"
+workflow_dir.mkdir(parents=True, exist_ok=True)
+
+workflow = """name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+"""
+
+(workflow_dir / "deploy.yml").write_text(workflow, encoding="utf-8")
+(base / "CNAME").write_text("jaxonwatterson.xyz\n", encoding="utf-8")
+
+# A copy of the previously generated landing page, installed as the Pages entry point.
+source = Path("/mnt/data/jaxon-watterson.html")
+(base / "index.html").write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
+
+import zipfile
+zip_path = Path("/mnt/data/jaxonwatterson-github-pages.zip")
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+    for p in base.rglob("*"):
+        if p.is_file():
+            zf.write(p, p.relative_to(base))
+
+print(f"Created setup bundle: {zip_path}")
+print(f"Workflow: {workflow_dir / 'deploy.yml'}")
