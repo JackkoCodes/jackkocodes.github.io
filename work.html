@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected work by Jaxon Watterson.">
+  <title>Work — Jaxon Watterson</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      background: #fff;
+      color: #000;
+      font-family: Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      width: min(100% - 3rem, 760px);
+      margin: 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0;
+    }
+
+    .wordmark,
+    nav a {
+      color: #000;
+      font-size: 0.75rem;
+      text-decoration: none;
+    }
+
+    .wordmark {
+      letter-spacing: -0.015em;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a,
+    footer a {
+      color: #777;
+      transition: color 160ms ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible,
+    footer a:hover,
+    footer a:focus-visible {
+      color: #000;
+    }
+
+    main {
+      flex: 1;
+      padding: clamp(4rem, 12vh, 8rem) 0 5rem;
+    }
+
+    .intro {
+      margin-bottom: 4.5rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      margin: 1rem 0 0;
+      color: #777;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    .section-label {
+      margin: 0 0 1.25rem;
+      color: #999;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .work-list {
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid #e8e8e8;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .work-item h2 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.4;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+    }
+
+    .work-item p {
+      margin: 0.35rem 0 0;
+      color: #777;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .work-item .year {
+      color: #999;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+
+    .work-item:hover h2,
+    .work-item:focus-visible h2 {
+      color: #666;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.75rem 0 2rem;
+      color: #999;
+      font-size: 0.7rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    footer a {
+      font-size: 0.7rem;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 1px solid currentColor;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        width: min(100% - 2.5rem, 760px);
+      }
+
+      header {
+        padding: 1.5rem 0;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      main {
+        padding-top: 4.5rem;
+      }
+
+      .intro {
+        margin-bottom: 3.5rem;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <a class="wordmark" href="index.html">
+        Jaxon Watterson
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="work.html" aria-current="page">Work</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="intro">
+        <h1>Selected work</h1>
+        <p class="subtitle">
+          <!-- Your introduction goes here. -->
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-label">Projects</h2>
+
+        <div class="work-list">
+
+          <!-- Duplicate this block for additional projects. -->
+          <a class="work-item" href="#">
+            <div>
+              <h2>Project title</h2>
+              <p>Short project description or role.</p>
+            </div>
+            <span class="year">2026</span>
+          </a>
+
+          <a class="work-item" href="#">
+            <div>
+              <h2>Project title</h2>
+              <p>Short project description or role.</p>
+            </div>
+            <span class="year">2025</span>
+          </a>
+
+          <a class="work-item" href="#">
+            <div>
+              <h2>Project title</h2>
+              <p>Short project description or role.</p>
+            </div>
+            <span class="year">2025</span>
+          </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <span>© Jaxon Watterson</span>
+
+      <div class="social-links">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
