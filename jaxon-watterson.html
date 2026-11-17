@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jaxon Watterson — Broadcasting, technology, and storytelling.">
+  <title>Jaxon Watterson</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      background: #fff;
+      color: #000;
+      font-family: Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .intro {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.25rem, 7vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      margin: 1.1rem 0 0;
+      color: #666;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      line-height: 1.5;
+      font-weight: 400;
+      letter-spacing: 0.015em;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1.25rem, 4vw, 2.5rem);
+      padding: 1.75rem 1.25rem 2rem;
+    }
+
+    footer a {
+      color: #666;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    footer a:hover,
+    footer a:focus-visible {
+      color: #000;
+    }
+
+    footer a:focus-visible {
+      outline: 1px solid currentColor;
+      outline-offset: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="intro">
+      <h1>Jaxon Watterson</h1>
+      <p class="subtitle">Broadcasting · Technology · Storytelling</p>
+    </div>
+  </main>
+
+  <footer aria-label="Social links">
+    <!-- Replace the # values with your profile URLs. -->
+    <a href="#" aria-label="Instagram">Instagram</a>
+    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+    <a href="#" aria-label="YouTube">YouTube</a>
+  </footer>
+</body>
+</html>
