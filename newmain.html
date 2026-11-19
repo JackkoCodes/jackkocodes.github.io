@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jaxon Watterson — Personal website and selected work.">
+
+  <title>Jaxon Watterson</title>
+
+  <style>
+    :root {
+      --black: #080808;
+      --white: #ffffff;
+      --gray: #777777;
+      --yellow: #eaff00;
+      --pink: #ff0080;
+      --cyan: #00d5ed;
+      --purple: #5900ed;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--black);
+      font-family: Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      width: 100%;
+      padding: 22px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+    }
+
+    .wordmark {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      font-size: 0.75rem;
+      color: var(--gray);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--black);
+    }
+
+    /* HERO */
+
+    .hero {
+      width: 100%;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      margin: 0 0 35px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+    }
+
+    .about-heading {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      letter-spacing: -0.07em;
+      line-height: 0.95;
+      margin: 0;
+    }
+
+    .about-content {
+      max-width: 650px;
+    }
+
+    .about-content p {
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      line-height: 1.5;
+      letter-spacing: -0.025em;
+      margin: 0 0 25px;
+    }
+
+    .about-content .secondary {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* WORK */
+
+    .work {
+      background: #f7f7f7;
+    }
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    .work-header h2 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      letter-spacing: -0.07em;
+      line-height: 0.95;
+      margin: 0;
+    }
+
+    .work-header span {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 45px 25px;
+    }
+
+    .project {
+      display: block;
+    }
+
+    .project-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: #e5e5e5;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .project:hover .project-image img {
+      transform: scale(1.025);
+    }
+
+    .project h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 8px;
+    }
+
+    .project p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    .project-meta {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: var(--gray);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 5%;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-name {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.06em;
+    }
+
+    .socials {
+      display: flex;
+      gap: 25px;
+    }
+
+    .socials a {
+      font-size: 0.75rem;
+      color: #aaa;
+      transition: color 0.2s ease;
+    }
+
+    .socials a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      margin-top: 45px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      color: #777;
+      font-size: 0.7rem;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 20px 5%;
+      }
+
+      nav {
+        gap: 18px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .work-header {
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .socials {
+        flex-wrap: wrap;
+      }
+
+      .footer-bottom {
+        gap: 15px;
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <a class="wordmark" href="index.html">
+      JW.
+    </a>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <div class="hero">
+    <img
+      src="SMTD%20portfolio.png"
+      alt="Jaxon Watterson "
+    >
+  </div>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div>
+          <p class="section-label">About</p>
+          <h1 class="about-heading">
+            A little<br>about me.
+          </h1>
+        </div>
+
+        <div class="about-content">
+
+          <p>
+            <!-- Primary biography goes here. -->
+          </p>
+
+          <p class="secondary">
+            <!-- Additional biography, interests, experience, etc. -->
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SELECTED WORK -->
+
+  <section class="work" id="work">
+    <div class="container">
+
+      <div class="work-header">
+        <div>
+          <p class="section-label">Portfolio</p>
+          <h2>Selected work.</h2>
+        </div>
+
+        <span>Projects &amp; collaborations</span>
+      </div>
+
+
+      <div class="project-grid">
+
+        <!-- PROJECT 01 -->
+
+        <a class="project" href="#">
+          <div class="project-image">
+            <!-- <img src="project-01.jpg" alt="Project description"> -->
+          </div>
+
+          <h3>Project title</h3>
+          <p>Project description goes here.</p>
+
+          <div class="project-meta">
+            <span>Category</span>
+            <span>2026</span>
+          </div>
+        </a>
+
+
+        <!-- PROJECT 02 -->
+
+        <a class="project" href="#">
+          <div class="project-image">
+            <!-- <img src="project-02.jpg" alt="Project description"> -->
+          </div>
+
+          <h3>Project title</h3>
+          <p>Project description goes here.</p>
+
+          <div class="project-meta">
+            <span>Category</span>
+            <span>2026</span>
+          </div>
+        </a>
+
+
+        <!-- PROJECT 03 -->
+
+        <a class="project" href="#">
+          <div class="project-image">
+            <!-- <img src="project-03.jpg" alt="Project description"> -->
+          </div>
+
+          <h3>Project title</h3>
+          <p>Project description goes here.</p>
+
+          <div class="project-meta">
+            <span>Category</span>
+            <span>2025</span>
+          </div>
+        </a>
+
+
+        <!-- PROJECT 04 -->
+
+        <a class="project" href="#">
+          <div class="project-image">
+            <!-- <img src="project-04.jpg" alt="Project description"> -->
+          </div>
+
+          <h3>Project title</h3>
+          <p>Project description goes here.</p>
+
+          <div class="project-meta">
+            <span>Category</span>
+            <span>2025</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-name">
+        Jaxon Watterson.
+      </div>
+
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Jaxon Watterson</span>
+      <span>Made with intention.</span>
+    </div>
+
+  </footer>
+
+</body>
+</html>
